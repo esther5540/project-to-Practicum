@@ -1,18 +1,31 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project.Entites
+namespace Project.Repository.Entites
 {
-    internal class Users
+  
+    public class Users
     {
-        public int UserId { get; set; }//מפתח רץ
-        public string UserName { get; set; }
-        public string Mail { get; set; }
-        public int Telephone { get; set; }
-        public string Password { get; set; }
+        [Key]
+        public int UserId { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string Tz { get; set; }
+        public DateTime Birthday { get; set; }
+        public string Gender { get; set; }
+        public string healthFund { get; set; }
+        public int Children { get; set; }
+        [AllowNull]
+        public string FatherTz { get; set; }
+        [AllowNull]
+        public string MotherTz { get; set; }
 
     }
 }
